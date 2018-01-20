@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Neptuna</string>
+    <string name="login_title">Sign in to your account</string>
+    <string name="login_username_hint">Login</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_forgotten_password">Password forgotten?</string>
+    <string name="login_sign_in">Sign in</string>
+    <string name="login_sign_up">Need an account? Sign in</string>
 </resources>
