@@ -6,4 +6,6 @@
     <string name="login_forgotten_password">Password forgotten?</string>
     <string name="login_sign_in">Sign in</string>
     <string name="login_sign_up">Need an account? Sign in</string>
+    <string name="login_success">Welcome motherfucker</string>
+    <string name="login_failure">Login or password incorrect</string>
 </resources>
