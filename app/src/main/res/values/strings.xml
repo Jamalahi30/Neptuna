@@ -5,7 +5,15 @@
     <string name="login_password_hint">Password</string>
     <string name="login_forgotten_password">Password forgotten?</string>
     <string name="login_sign_in">Sign in</string>
-    <string name="login_sign_up">Need an account? Sign in</string>
+    <string name="login_sign_up">Need an account? Sign up</string>
     <string name="login_success">Welcome motherfucker</string>
     <string name="login_failure">Login or password incorrect</string>
+    <string name="register_signUp">Sign up to Neptuna</string>
+    <string name="register_name">Last name</string>
+    <string name="register_fname">First name</string>
+    <string name="register_login">Enter a username</string>
+    <string name="register_password">Enter a password</string>
+    <string name="register_button">Sign up</string>
+    <string name="badEmailFormatAlert">Votre email est incorrect</string>
+    <string name="badPasswordAlert">Mot de passe incorrect</string>
 </resources>

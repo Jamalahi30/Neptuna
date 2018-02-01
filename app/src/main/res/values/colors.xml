@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2c3e50</color>
-    <color name="colorPrimaryDark">#1b2e41</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="login_background">#2c3e50</color>
-    <color name="login_title">#FFF</color>
-    <color name="login_username">#FFF</color>
-    <color name="login_username_hint">#bdc3c7</color>
+    <color name="colorPrimary">#98acab</color>
+    <color name="colorPrimaryDark">#4d6664</color>
+    <color name="colorAccent">#FCE4EC</color>
+    <color name="login_title">#039BE5</color>
+    <color name="login_username">#424242</color>
+    <color name="login_background">#FFF</color>
+    <color name="login_username_hint">#757575</color>
     <color name="login_forgotten_password">#3498db</color>
-    <color name="login_sign_in_background">#16a085</color>
+    <color name="login_sign_in_background">#039BE5</color>
     <color name="login_sign_in_foreground">#fff</color>
 
 </resources>

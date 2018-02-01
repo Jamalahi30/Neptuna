@@ -1,4 +1,4 @@
-package io.jamalahi.neptuna.activities;
+package io.jamalahi.neptuna.views;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import io.jamalahi.neptuna.R;
 import io.jamalahi.neptuna.database.models.User;
+import io.jamalahi.neptuna.presenters.Validator;
+import io.jamalahi.neptuna.utils.Messages;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -44,23 +45,20 @@ public class LoginActivity extends AppCompatActivity {
         _signIn_.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                user = new User(
-                        _login_.getText().toString().trim(),
-                        _password_.getText().toString().trim()
-                );
-                if(! user.isValid()){
-                    Toast.makeText(
-                            getApplicationContext(),
-                            getString(R.string.login_failure),
-                            Toast.LENGTH_LONG
-                    ).show();
+               //recuperer login et mot de passe
+                String login = ((EditText)findViewById(R.id.login_username)).getText().toString().trim();
+                String password = ((EditText)findViewById(R.id.login_password)).getText().toString().trim();
+                if(!Validator.validateEmail(login)){
+                    Messages.toast(getApplicationContext(),getString(R.string.badEmailFormatAlert));
                     return;
                 }
-                Toast.makeText(
-                        getApplicationContext(),
-                        getString(R.string.login_success),
-                        Toast.LENGTH_LONG
-                ).show();
+                if(!Validator.validatePassword(password)){
+                    Messages.toast(getApplicationContext(),getString(R.string.badPasswordAlert));
+                    return;
+                }
+
+                User usr
+
 
             }
         });

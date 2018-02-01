@@ -1,4 +1,4 @@
-package io.jamalahi.neptuna.activities;
+package io.jamalahi.neptuna.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
