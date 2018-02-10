@@ -16,4 +16,12 @@
     <string name="register_button">Sign up</string>
     <string name="badEmailFormatAlert">Votre email est incorrect</string>
     <string name="badPasswordAlert">Mot de passe incorrect</string>
+    <string name="login_authFailure">Login ou mot de passe incorrect</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
 </resources>

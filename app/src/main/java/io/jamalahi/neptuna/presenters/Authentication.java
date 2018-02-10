@@ -8,9 +8,9 @@ import io.jamalahi.neptuna.database.models.User;
 
 public class Authentication {
 
-    public User signIn(User u)
+    public static User signIn(User u)
     {
-        return null;
+        return new User(1, "Amaanatu DIOP", "jamalahi30", "elichou");
 
     }
 

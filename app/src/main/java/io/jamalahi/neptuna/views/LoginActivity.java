@@ -7,24 +7,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import io.jamalahi.neptuna.R;
 import io.jamalahi.neptuna.database.models.User;
+import io.jamalahi.neptuna.presenters.Authentication;
 import io.jamalahi.neptuna.presenters.Validator;
 import io.jamalahi.neptuna.utils.Messages;
+import io.jamalahi.neptuna.utils.Session;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private User user;
+    private Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        session = new Session(getApplicationContext());
+        if(session.isActive()){
+            Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
         // We link our components
-        final EditText _login_ = findViewById(R.id.login_username);
-        final EditText _password_ = findViewById(R.id.login_password);
         TextView _forgottenPassword_= findViewById(R.id.login_forgotten_password);
         Button _signIn_ = findViewById(R.id.login_sign_in);
         TextView _signUp_ = findViewById(R.id.login_sign_up);
@@ -52,14 +58,20 @@ public class LoginActivity extends AppCompatActivity {
                     Messages.toast(getApplicationContext(),getString(R.string.badEmailFormatAlert));
                     return;
                 }
+
                 if(!Validator.validatePassword(password)){
                     Messages.toast(getApplicationContext(),getString(R.string.badPasswordAlert));
                     return;
                 }
 
-                User usr
-
-
+                User user = Authentication.signIn(new User(login,password));
+                if (user == null) {
+                    Messages.toast(getApplicationContext(),getString(R.string.login_authFailure));
+                    return;
+                }
+                session.start(user);
+                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                finish();
             }
         });
 
