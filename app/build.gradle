@@ -29,4 +29,10 @@ dependencies {
 
     // GSON: A Java serialization/deserialization library to convert Java Objects into JSON and back
     compile 'com.google.code.gson:gson:2.8.2'
+    // Adding Google Firebase to the project
+    compile 'com.google.firebase:firebase-core:11.8.0'
+    // Adding Google Firebase Database
+    compile 'com.google.firebase:firebase-database:11.8.0'
 }
+
+apply plugin: 'com.google.gms.google-services'

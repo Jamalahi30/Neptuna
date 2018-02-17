@@ -3,11 +3,18 @@ package io.jamalahi.neptuna.views;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import io.jamalahi.neptuna.R;
 import io.jamalahi.neptuna.database.models.User;
@@ -24,6 +31,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference loginRef = database.getReference("login");
+        DatabaseReference passwordRef = database.getReference("password");
         session = new Session(getApplicationContext());
         if(session.isActive()){
             Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
@@ -64,14 +75,14 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                User user = Authentication.signIn(new User(login,password));
+                /*User user = Authentication.signIn(new User(login,password));
                 if (user == null) {
                     Messages.toast(getApplicationContext(),getString(R.string.login_authFailure));
                     return;
                 }
                 session.start(user);
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                finish();
+                finish();*/
             }
         });
 
